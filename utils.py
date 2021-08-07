@@ -7,7 +7,7 @@ import aiohttp
 from aiohttp import TCPConnector
 
 api = "https://api.github.com"
-token = os.getenv('GITHUB_TOKEN')
+token = os.getenv("GITHUB_TOKEN")
 
 headers = {
     "Accept": "application/vnd.github.v3+json",

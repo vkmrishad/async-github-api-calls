@@ -6,7 +6,7 @@ from utils import github_utils
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/users")
 async def home(request: Request):
     # Get params
     params = dict(request.query_params)
@@ -16,5 +16,12 @@ async def home(request: Request):
     if usernames:
         usernames = usernames.split(",")
 
-    data = await github_utils(usernames, include)
+    if usernames is None:
+        data = {
+            "error": {
+                "message": "use - /users?usernames={comma},{separated},{usernames}"
+            }
+        }
+    else:
+        data = await github_utils(usernames, include)
     return JSONResponse(content=data)
