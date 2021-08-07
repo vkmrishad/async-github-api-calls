@@ -98,7 +98,7 @@ async def fetch_user(username, include, session):
             data["url"] = response.get("html_url")
             repo = asyncio.ensure_future(fetch_public_repos(username, include, session))
             repos = await asyncio.gather(repo)
-            data["public_repos"] = repos
+            data["public_repos"] = repos[0]
             return data
     except Exception as e:
         print(e)
