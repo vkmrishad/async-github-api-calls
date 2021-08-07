@@ -1,20 +1,20 @@
-from aiohttp import web
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 
 from utils import github_utils
 
+app = FastAPI()
 
-async def home(request):
+
+@app.get("/")
+async def home(request: Request):
     # Get params
-    params = request.rel_url.query
+    params = dict(request.query_params)
 
     usernames = params.get("usernames")
     include = params.get("include")
     if usernames:
         usernames = usernames.split(",")
-    data = await github_utils(usernames, include)
-    return web.json_response(data)
 
-# Server
-app = web.Application()
-app.add_routes([web.get("/", home)])
-web.run_app(app)
+    data = await github_utils(usernames, include)
+    return JSONResponse(content=data)

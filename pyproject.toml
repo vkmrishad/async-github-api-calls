@@ -8,6 +8,8 @@ authors = ["Mohammed Rishad <mohammedrishad.vk@gmail.com>"]
 python = "^3.8"
 aiohttp = "^3.7.4"
 asyncio = "^3.4.3"
+fastapi = "^0.68.0"
+uvicorn = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 
