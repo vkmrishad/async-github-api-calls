@@ -1,7 +1,7 @@
 # async-github-api-calls
 async-github-api-calls
 
-Used black for Pylint - [Black](https://black.readthedocs.io/en/stable/)
+Using black for Pylint - [Black](https://black.readthedocs.io/en/stable/)
 
 
 ## Environment and Package Management
