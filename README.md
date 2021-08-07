@@ -37,7 +37,7 @@ Generate GitHub Token - [Link](https://github.com/settings/tokens)
 ## API Endpoints
 
     http://127.0.0.1:8080/users?usernames=vkmrishad,mojombo - Users
-    http://127.0.0.1:8080/?usernames=vkmrishad,mojombo&include=commit_latest -  Include Latest Commit
+    http://127.0.0.1:8080/users?usernames=vkmrishad,mojombo&include=commit_latest -  Include Latest Commit
 
 
 ### Users
