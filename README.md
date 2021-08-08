@@ -33,11 +33,13 @@ Generate GitHub Token - [Link](https://github.com/settings/tokens)
     $ uvicorn main:app --host 0.0.0.0 --port 8000
     or
     $ uvicorn main:app --reload
+    or
+    $ gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker
 
 ## API Endpoints
 
-    http://127.0.0.1:8080/users?usernames=vkmrishad,mojombo - Users
-    http://127.0.0.1:8080/users?usernames=vkmrishad,mojombo&include=commit_latest -  Include Latest Commit
+    http://127.0.0.1:8000/users?usernames=vkmrishad,mojombo - Users
+    http://127.0.0.1:8000/users?usernames=vkmrishad,mojombo&include=commit_latest -  Include Latest Commit
 
 
 ### Users
